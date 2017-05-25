@@ -15,4 +15,6 @@ fi
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+source "${ZDOTDIR:-$HOME}/.zprezto/custom/environment.zsh"
+
 source ~/extra.zsh
