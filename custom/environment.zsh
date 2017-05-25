@@ -2,12 +2,8 @@
 
 #Environment variables
 export ZSH_HOST_OS=$(uname | awk '{print tolower($0)}')
-export PATH=/usr/local/sbin:~/npm-global/bin:$PATH
 export EDITOR="vim"
 export DISABLE_AUTO_TITLE=true
-
-# Assumes that coreutils and other GNU tools have replaced OSX'
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 gimme () {
 	grep -HrnIi --color=always $1 .
@@ -17,6 +13,7 @@ alias vi='vim'
 
 case $ZSH_HOST_OS in
 	darwin*)
+  # Use gnu coreutils on OSX
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
   alias ls='gls --color=auto'
