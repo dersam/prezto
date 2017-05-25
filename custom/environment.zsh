@@ -16,11 +16,10 @@ case $ZSH_HOST_OS in
   # Use gnu coreutils on OSX
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
-  alias ls='gls --color=auto'
 
   alias stfu="osascript -e 'set volume output muted true'"
   alias flushdns="dscacheutil -flushcache"
-  alias update='zot; composer selfupdate; softwareupdate -i -a --verbose; brew doctor; brew update; brew upgrade; brew cleanup; npm update -g'
+  alias update='composer selfupdate; softwareupdate -i -a --verbose; brew doctor; brew update; brew upgrade; brew cleanup; npm update -g'
 
 
   # OSX settings
@@ -47,6 +46,7 @@ alias .....="cd ../../../.."
 
 # Filesystem
 alias cp="cp -a"
+# Live dangerously.
 alias rm="rm -rf"
 
 # DO NOT EVER ALIAS mkdir with -p parents option. IT WILL BREAK INHERITED ACL
