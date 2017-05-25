@@ -1,5 +1,7 @@
 # symlink configs to home
 
+#git clone --recursive https://github.com/dersam/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
 export DOTFILES_HOME=~/.zprezto
 
 ln -vsfn $DOTFILES_HOME/configs/.gitconfig ~/
